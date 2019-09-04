@@ -1,0 +1,56 @@
+#dashboard-separator {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#schedule-task-form {
+    margin: 15px;
+}
+
+#today {
+    margin: 15px;
+}
+
+#future {
+    margin: 15px;
+}
+
+.scheduled-display {
+    display: flex;
+}
+
+.trash-button {
+    color: darkgray;
+}
+
+.trash-button:hover {
+
+    color: grey;
+
+}
+
+
+.dashboard-slots {
+    border: solid 1px grey;
+    padding: 30px 25px;
+    width: 400px;
+    height: 700px;
+    overflow-y: scroll;
+    word-wrap: break-word;
+}
+
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+body {
+    margin: 40px 80px;
+}

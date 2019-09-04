@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create User</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="/scripts/CreateUserScripts.js"></script>
+    <link rel="stylesheet" href="/stylesheets/CreateUserStyles.css">
+    <link rel="stylesheet" href="/stylesheets/NavbarLoggedInStyles.css">
+    <link rel="stylesheet" href="/stylesheets/NavbarNotLoggedInStyles.css">
+</head>
+<body>
+
+
+<!--basic form that will be used as a data capture to make create a users account-->
+
+<h1>Register Account</h1>
+<div class="container">
+    <div class="jumbotron">
+        <form class="form" action="#">
+            <h3>Account Details</h3><br>
+            <div class="row">
+                <div class="col">
+                    <label for="first-name">First Name</label>
+                    <input class="form-control" id="first-name" type="text"><br>
+                </div>
+                <div class="col">
+                    <label for="last-name">Last Name</label>
+                    <input class="form-control" id="last-name" type="text"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="email">Email</label>
+                    <input class="form-control" id="email"  type="text"><br>
+                </div>
+                <div class="col">
+                    <label for="business">Business</label>
+                    <input class="form-control" id="business" type="text"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="password">Password</label>
+                    <input class="form-control" id="password" type="password"><br>
+                </div>
+                <div class="col">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input class="form-control" id="confirm-password" type="password"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" id="see-password" type="checkbox" onclick="showPassword();">
+                        <label class="form-check-label" for="see-password">See Password</label>
+                    </div>
+                    <small id="password-help" class="form-text text-muted">
+                        Your password must be longer than 8 characters, contain upper and lower case letters, numbers,
+                        and must not contain spaces, special characters, or emoji.
+                    </small>
+                </div>
+            </div>
+            <input class="btn btn-primary btn-lg btn-submit" type="submit">
+        </form>
+    </div>
+
+</div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

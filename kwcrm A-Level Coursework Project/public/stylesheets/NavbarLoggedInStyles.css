@@ -1,0 +1,25 @@
+
+.separator {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-item{
+    font-size: large;
+    margin: 0 20px;
+}
+
+.small-margin-right {
+    margin-left: 20px;
+}
+
+.mid-nav{
+    width: 50%;
+}
+
+.spread-nav-items{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}

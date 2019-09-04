@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Contact</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/EditContactStyles.css">
+    <link rel="stylesheet" href="/stylesheets/NavbarLoggedInStyles.css">
+    <link rel="stylesheet" href="/stylesheets/NavbarNotLoggedInStyles.css">
+    <script src="/scripts/EditContactScripts.js"></script>
+</head>
+<body>
+
+
+<% include partials/NavbarLoggedIn.ejs %>
+
+<%if (flashMessage !== undefined){%>
+<div class="alert alert-danger">
+    <%= flashMessage %>
+</div>
+<%}%>
+
+<!--form containing a contacts data in the text fields-->
+<h1>Edit Contact</h1>
+<div class="container">
+
+    <div class="jumbotron">
+         <!--action url is set to put to have the correct http verb for updating db-->
+        <form class="form" action="/contacts/<%= contact.record[0]%>?_method=PUT" method="post">
+            <h3>Contact Details</h3><br>
+            <div class="row">
+                <div class="col">
+                    <label for="business">Business</label>
+                    <input class="form-control" id="business" type="text" name="businessName" value="<%= contact.record[2]%>"><br>
+                </div>
+                <div class="col">
+                    <label for="first-name">First Name</label>
+                    <input class="form-control" id="first-name" type="text" name="firstName" value="<%= contact.record[3]%>"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="last-name">Last Name</label>
+                    <input class="form-control" id="last-name" type="text" name="lastName" value="<%= contact.record[4]%>"><br>
+                </div>
+                <div class="col">
+                    <label for="email">Email</label>
+                    <input class="form-control" id="email"  type="text" name="email" value="<%= contact.record[5]%>"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="telephone">Telephone</label>
+                    <input class="form-control" id="telephone" type="text" name="telephone" value="<%= contact.record[6]%>"><br>
+                </div>
+                <div class="col">
+                    <label for="city">City</label>
+                    <input class="form-control" id="city" type="text" name="city" value="<%= contact.record[7]%>"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="postcode">Postcode</label>
+                    <input class="form-control" id="postcode" type="text" name="postcode" value="<%= contact.record[8]%>"><br>
+                </div>
+                <div class="col">
+                    <label for="address">Address</label>
+                    <input class="form-control" id="address" type="text" name="address" value="<%= contact.record[9]%>"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="status">Contact Status</label>
+                    <select class="custom-select" name="status" id="status">
+
+                        <!--the bellow conditionals check to see the value of the clients current status and makes the
+                            the right one the selected value out of the drop down menu-->
+
+                        <%if(contact.record[10] === "lead") {%>
+                            <option selected value="lead">Lead</option>
+                        <%} else { %>
+                            <option value="lead">Lead</option>
+                        <%}%>
+
+                        <%if(contact.record[10] === "recontact-lead") {%>
+                            <option selected value="recontact-lead">Recontact Lead</option>
+                        <%} else { %>
+                            <option value="recontact-lead">Recontact Lead</option>
+                        <%}%>
+
+                        <%if(contact.record[10] === "dead-lead") {%>
+                            <option selected value="dead-lead">Dead Lead</option>
+                        <%} else { %>
+                            <option value="dead-lead">Dead Lead</option>
+                        <%}%>
+
+                        <%if(contact.record[10] === "current-client") {%>
+                            <option selected value="current-client">Current Client</option>
+                        <%} else { %>
+                            <option value="current-client">Current Client</option>
+                        <%}%>
+
+
+                        <%if(contact.record[10] === "past-client") {%>
+                        <option selected value="past-client">Past Client</option>
+                        <%} else { %>
+                        <option value="past-client">Past Client</option>
+                        <%}%>
+
+                    </select>
+                </div>
+            </div>
+            <input class="btn btn-primary btn-lg btn-submit" type="submit">
+        </form>
+    </div>
+</div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

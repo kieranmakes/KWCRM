@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/ContactsListStyles.css">
+    <link rel="stylesheet" href="/stylesheets/NavbarLoggedInStyles.css">
+    <link rel="stylesheet" href="/stylesheets/NavbarNotLoggedInStyles.css">
+</head>
+<body>
+
+
+<% include partials/NavbarLoggedIn.ejs %>
+
+
+<%if (flashMessage !== undefined){%>
+<div class="alert alert-success">
+    <%= flashMessage %>
+</div>
+<%}%>
+
+<%if (errorMessage !== undefined){%>
+<div class="alert alert-danger">
+    <%= errorMessage %>
+</div>
+<%}%>
+
+
+<!--page for displaying the users contacts in a table-->
+
+<h1>Contacts List
+    <% if(titleAddition !== undefined){ %>
+        -  <em style="margin-left: 15px;">"<%= titleAddition %>"</em>
+    <%}%>
+</h1>
+
+<!--page is split up vertically-->
+
+<div class="holder">
+
+    <!--left side will contain the searching and sorting options along with options to add a contact, import contacts with a csv file
+        and export contacts as a csv file-->
+
+    <div id="left-side-container">
+        <div class="jumbotron">
+            <div id="modify-list-results-form">
+
+                <form action="/contacts/search" method="post">
+                    <label for="searchBar">Search</label><br>
+                    <input name="searchBar" id="searchBar" type="text">
+                    <button class="btn btn-sm btn-outline-dark"><i class="fas fa-search"></i></button>
+                </form>
+                <br>
+
+                <form action="/contacts/sortBy" method="post">
+
+                    <h5>Sort By</h5>
+
+                    <input type="radio" name="sortBy" id="date" value="date"> <label for="date">Date</label> <br>
+
+                    <input type="radio" name="sortBy" id="city" value="city"> <label for="city">City</label> <br>
+
+                    <input type="radio" name="sortBy" id="business-name" value="businessName"> <label for="business-name">Business Name</label> <br><br>
+
+                    <label for="order">Order</label>
+                    <select class="custom-select" name="order" id="order">
+                        <option value="ascending">ascending</option>
+                        <option value="descending">descending</option>
+                    </select> <br><br>
+
+                    <input class="btn btn-success" type="submit">
+                </form>
+            </div>
+
+            <hr>
+
+            <div id="contact-management">
+
+                <a class="btn btn-primary" id="add-contact" href="/contacts/new">Add Contact</a>
+
+                <hr>
+
+                <!-- UNCOMMENT TO BE ABLE IMPORT CONTACTS HTML WHEN IT IS TO GET IMPLEMENTED -->
+
+                <!---->
+                <!--<form>-->
+                    <!--<div class="form-group">-->
+                        <!--<label for="import-contacts">Import Contacts (.CSV file)</label>-->
+                        <!--<input type="file" class="form-control-file" id="import-contacts">-->
+                    <!--</div>-->
+                <!--</form>-->
+                <!--<br>-->
+
+
+                <!--<form action="#">-->
+                    <!--<button class="btn btn-secondary" id="import-contact-btn">import Contact</button>-->
+                <!--</form>-->
+
+                <br>
+
+                <form action="/contacts/download" method="get">
+                    <button class="btn btn-secondary" id="export-contact-btn">Export Contacts</button>
+                </form>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--on the right side there is a table containing all the contacts with a link to the contact's individual page in the name field-->
+    <div id="right-side-container">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Business</th>
+                    <th>City</th>
+                    <th>Email</th>
+                    <th>Telephone</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <!--gets the contacts details and puts it into the table row by row-->
+                <% contactRecords.forEach((record) => { %>
+                    <tr>
+                        <td><a href="/contacts/viewContact<%=record[0]%>"><%=record[3] + " " + record[4]%></a></td>
+                        <td><%=record[2]%> </td>
+                        <td><%=record[7]%></td>
+                        <td><%=record[5]%></td>
+                        <td><%=record[6]%></td>
+                    </tr>
+                <%});%>
+
+            </tbody>
+
+
+        </table>
+    </div>
+</div>
+
+<script src="/scripts/ContactListScripts.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

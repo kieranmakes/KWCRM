@@ -1,0 +1,27 @@
+body {
+    margin: 40px 40px;
+}
+
+.container {
+    width: 800px;
+}
+
+.form {
+    margin-top: 20px;
+    padding: 30px;
+}
+
+.form-control {
+    border: 1px solid grey;
+}
+
+.custom-select {
+    border: 1px solid grey;
+    height: 40px;
+}
+
+
+.btn-submit{
+    float: right;
+    width: 30%;
+}
