@@ -1,8 +1,6 @@
 
 
-~~~~ READ ME.txt ~~~~~
-
-///////////////////////////////
+## READ ME
 
 
 Ensure you open the website in the google chrome web browser and that it is viewed on a high resolution display.
@@ -18,20 +16,13 @@ I am aware that when running the analytics page on a local machine, it will not 
 Contacts can't be deleted on the live website version however deleting contacts works when running it locally. 
 
 
+# ~~~~ To Run Site From URL ~~~~~
 
-~~~~ To Run Site From URL ~~~~~
-
-///////////////////////////////
 
 Copy and paste the url in this directory into the google chrome web browser search bar at the top of the screen.
 
 
-
-
-
-~~~~ To Run Site Locally ~~~~~
-
-///////////////////////////////
+# ~~~~ To Run Site Locally ~~~~~
 
 
 1) install node js onto your machine
@@ -53,5 +44,3 @@ Copy and paste the url in this directory into the google chrome web browser sear
 
 7) if an error occurred it is likely due to that port already being used by something else. To change the port the site is being hosted on, open the index.js file in a text editor and at the very bottom where there is a function called "app.listen()" change the first parameter to another port number 8000, 8010, 8009, etc.. save the file and follow the steps again.
 
-
-///////////////////////////////
