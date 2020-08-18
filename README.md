@@ -19,7 +19,7 @@ Contacts can't be deleted on the live website version however deleting contacts 
 # ~~~~ To Run Site From URL ~~~~~
 
 
-Copy and paste the url in this directory into the google chrome web browser search bar at the top of the screen.
+https://kwcrm.herokuapp.com/
 
 
 # ~~~~ To Run Site Locally ~~~~~
