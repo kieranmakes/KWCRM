@@ -22,6 +22,8 @@ An open source, web based customer relationship management system made into a de
   Has a conversion rate (lead to client) output too that shows the conversion rate as both a ratio and a percentage.
   All of the Analytics data can be reset from this page too.
 
+<hr> 
+
 ### How It Works
 
 * Electron app src/index.js creates a browser window and runs the express app
