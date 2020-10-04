@@ -13,34 +13,35 @@ An open source, web based customer relationship management system made into a de
 
   <img align="left" src="https://media.giphy.com/media/38UQZDj7URgZYAjS3t/giphy.gif">
   
-   ### ⏳ &nbsp;&nbsp; Task Scheduler
+  ### ⏳ &nbsp;&nbsp; Task Scheduler
 
   Enter date, time, subject and message into the schedule task form and then it will display in chronological order in wither the today or future list. Once the task's date and time has lapsed, the task will be removed. The task can also be manually removed by clicking the trash icon.   
 
-<br>
+<br><br><br><br>
 
- ### 📁 &nbsp;&nbsp; Contacts List
- 
   <img align="left" src="https://media.giphy.com/media/zWDF26WkikllHPgJNc/giphy.gif">
+
+  ### 📁 &nbsp;&nbsp; Contacts List
   
   Search, sort, add and export (csv file) contacts. contacts displayed in a scrolable table with some of their data. individual contact page can be accessed by clicking the contacts name link.
   
-<br>  
-  
- ### 🙋🏽‍ &nbsp;&nbsp; Individual Contact Pages
+<br><br><br><br>  
   
   <img align="left" src="https://media.giphy.com/media/8YWZoZXVFScOYYlOR7/giphy.gif">
+  
+  ### 🙋🏽‍ &nbsp;&nbsp; Individual Contact Pages
     
   Displays all of the contact's data. allows for notes to be added to the contact which get displayed only on the individual contact's page along with the date the note was created put in chronological order (newest at the top). An extra notes section (Text Area) which allows you to encrypt and decrypt data with a password through the use of xor encryption for more sensitive data. Can edit and delete contact through this page by clicking on the relevant buttons.
   
 <br>  
-  
- ### 📊 &nbsp;&nbsp; Analytics Page
 
   <img align="left" src="https://media.giphy.com/media/BDQtWZzi6KknoGjTSf/giphy.gif">
+
+  ### 📊 &nbsp;&nbsp; Analytics Page
   
   Shows graphs of clients gained and clients lost ove a monthly (last 12 months), weekly (last 12 weeks) and daily (last 14 days) time scale. Has a conversion rate (lead to client) output too that shows the conversion rate as both a ratio and a percentage. All of the Analytics data can be reset from this page too.
 
+<br><br><br><br><br><br>
 
 <hr> 
 
