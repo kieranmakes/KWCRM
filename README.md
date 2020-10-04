@@ -13,24 +13,40 @@ An open source, web based customer relationship management system made into a de
 
 ### Features
 
-* #### Task Scheduler
-  Found in the Dashboard. Enter date, time, subject and message into the schedule task form and then it will display in chronological order in wither the today or future list.
-  Once the task's date and time has lapsed, the task will be removed. The task can also be manually removed by clicking the trash icon.
-  
+* #### ⏳ &nbsp;&nbsp; Task Scheduler
+
   ![gif task schedular](https://media.giphy.com/media/38UQZDj7URgZYAjS3t/giphy.gif)
+
+    Found in the Dashboard. Enter date, time, subject and message into the schedule task form and then it will display in chronological order in wither the today or future list.
+    Once the task's date and time has lapsed, the task will be removed. The task can also be manually removed by clicking the trash icon.
+  
+  
   
 * #### 📁 &nbsp;&nbsp; Contacts List
-  Search, sort, add and export (csv file) contacts. contacts displayed in a scrolable table with some of their data. individual contact page can be accessed by clicking the contacts name link.
+
+  ![gif contacts list](https://media.giphy.com/media/zWDF26WkikllHPgJNc/giphy.gif)
+
+    Search, sort, add and export (csv file) contacts. contacts displayed in a scrolable table with some of their data. individual contact page can be accessed by clicking the contacts name link.
+  
   
 * #### 🙋🏽‍ &nbsp;&nbsp; Individual Contact Pages
-  Displays all of the contact's data. allows for notes to be added to the contact which get displayed only on the individual contact's page along with the date the note was created put in chronological order (newest at the top).
-  An extra notes section (Text Area) which allows you to encrypt and decrypt data with a password through the use of xor encryption for more sensitive data.
-  Can edit and delete contact through this page by clicking on the relevant buttons.
+
+  ![gif individual contact](https://media.giphy.com/media/8YWZoZXVFScOYYlOR7/giphy.gif)
+
+    Displays all of the contact's data. allows for notes to be added to the contact which get displayed only on the individual contact's page along with the date the note was created put in chronological order (newest at the top).
+    An extra notes section (Text Area) which allows you to encrypt and decrypt data with a password through the use of xor encryption for more sensitive data.
+    Can edit and delete contact through this page by clicking on the relevant buttons.
   
-* #### Analytics Page
-  Shows graphs of clients gained and clients lost ove a monthly (last 12 months), weekly (last 12 weeks) and daily (last 14 days) time scale.
-  Has a conversion rate (lead to client) output too that shows the conversion rate as both a ratio and a percentage.
-  All of the Analytics data can be reset from this page too.
+  
+  
+* #### 📊 &nbsp;&nbsp; Analytics Page
+
+  ![gif analytics](https://media.giphy.com/media/BDQtWZzi6KknoGjTSf/giphy.gif)
+
+    Shows graphs of clients gained and clients lost ove a monthly (last 12 months), weekly (last 12 weeks) and daily (last 14 days) time scale.
+    Has a conversion rate (lead to client) output too that shows the conversion rate as both a ratio and a percentage.
+    All of the Analytics data can be reset from this page too.
+
 
 <hr> 
 
