@@ -25,7 +25,7 @@ An open source, web based customer relationship management system made into a de
   
   Search, sort, add and export (csv file) contacts. contacts displayed in a scrolable table with some of their data. individual contact page can be accessed by clicking the contacts name link.
   
-<br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
   
   <img align="left" src="https://media.giphy.com/media/8YWZoZXVFScOYYlOR7/giphy.gif">
   
@@ -41,7 +41,7 @@ An open source, web based customer relationship management system made into a de
   
   Shows graphs of clients gained and clients lost ove a monthly (last 12 months), weekly (last 12 weeks) and daily (last 14 days) time scale. Has a conversion rate (lead to client) output too that shows the conversion rate as both a ratio and a percentage. All of the Analytics data can be reset from this page too.
 
-<br><br><br><br><br><br>
+<br><br><br><br>
 
 <hr> 
 
