@@ -6,7 +6,28 @@ An open source, web based customer relationship management system made into a de
 
 [Try out the CRM online in trial mode](https://kwcrm.herokuapp.com/)
 
-<hr>
+    
+
+    
+
+### Getting it Set and Running &nbsp;&nbsp; 🏃🏾‍♂️
+
+  ##### Download Prerequisites: [Node JS](https://nodejs.org/en/) &nbsp; 🌐
+
+    $ git clone https://github.com/kieranmakes/KWCRM/ 
+
+    $ node install
+
+    $ npm start
+    
+ 
+### Creating Executable &nbsp;&nbsp; 🔫
+
+    $ npm run make
+    
+ <hr>
+
+
 
 ## Features
 
