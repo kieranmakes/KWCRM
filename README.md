@@ -3,9 +3,14 @@
 <br>
 
 An open source, web based customer relationship management system made into a desktop application
+
+[Try out the CRM online in trial mode](https://kwcrm.herokuapp.com/)
+
 <hr>
 
 ### Features
+
+<br>
 
 * #### ⏳ &nbsp;&nbsp; Task Scheduler
 
@@ -14,14 +19,15 @@ An open source, web based customer relationship management system made into a de
     Found in the Dashboard. Enter date, time, subject and message into the schedule task form and then it will display in chronological order in wither the today or future list.
     Once the task's date and time has lapsed, the task will be removed. The task can also be manually removed by clicking the trash icon.
   
-  
-  
+<br>
+
 * #### 📁 &nbsp;&nbsp; Contacts List
 
   ![gif contacts list](https://media.giphy.com/media/zWDF26WkikllHPgJNc/giphy.gif)
 
     Search, sort, add and export (csv file) contacts. contacts displayed in a scrolable table with some of their data. individual contact page can be accessed by clicking the contacts name link.
   
+<br>  
   
 * #### 🙋🏽‍ &nbsp;&nbsp; Individual Contact Pages
 
@@ -31,7 +37,7 @@ An open source, web based customer relationship management system made into a de
     An extra notes section (Text Area) which allows you to encrypt and decrypt data with a password through the use of xor encryption for more sensitive data.
     Can edit and delete contact through this page by clicking on the relevant buttons.
   
-  
+<br>  
   
 * #### 📊 &nbsp;&nbsp; Analytics Page
 
