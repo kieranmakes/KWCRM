@@ -17,7 +17,7 @@ An open source, web based customer relationship management system made into a de
 
   Enter date, time, subject and message into the schedule task form and then it will display in chronological order in wither the today or future list. Once the task's date and time has lapsed, the task will be removed. The task can also be manually removed by clicking the trash icon.   
 
-<br><br><br><br><br><br>
+<br><br><br><br><br>
 
   <img align="left" src="https://media.giphy.com/media/zWDF26WkikllHPgJNc/giphy.gif">
 
