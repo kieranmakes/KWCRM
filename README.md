@@ -6,9 +6,6 @@ An open source, web based customer relationship management system made into a de
 
 <br>
 
-
-![gif opening app](https://media.giphy.com/media/jVToiQU1RwXNFvg5tM/giphy.gif)
-
 <hr>
 
 ### Features
