@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/NavbarLoggedInStyles.css">
+    <link rel="stylesheet" href="/stylesheets/NavbarNotLoggedInStyles.css">
+    <link rel="stylesheet" href="/stylesheets/DashboardStyles.css">
+
+
+</head>
+<body>
+
+<% include partials/NavbarLoggedIn.ejs %>
+
+
+<%if (flashMessage !== undefined){%>
+<div class="alert alert-success">
+    <%= flashMessage %>
+</div>
+<%}%>
+
+<%if (errorMessage !== undefined){%>
+<div class="alert alert-danger">
+    <%= errorMessage %>
+</div>
+<%}%>
+
+
+
+<h1>Dashboard</h1>
+
+<!-- The Dashboard is split into 3 sections  -->
+<div id="dashboard-separator">
+
+
+    <!--on the left there is the form to create a scheduling -->
+
+    <div id="schedule-task-form">
+
+        <h3>Schedule Task</h3>
+
+
+        <form class="dashboard-slots" title="Schedule Task" action="/dashboard/" method="post" id="Schedule Task">
+            <label for="date">date:</label> <br>
+            <input id="date" name="date" title="date" type="text" placeholder="dd/mm/yyyy"> <br><br>
+
+            <label for="time">time:</label><br>
+            <input id="time" name="time" title="time" type="text" placeholder="24 hour time: hh:mm"> <br><br>
+
+            <label for="subject">subject:</label><br>
+            <input id="subject" name="subject" type="text"> <br><br>
+
+            <label for="message">message:</label> <br>
+            <textarea onkeypress="return returnKeyBlocker(event)" id="message" title="message" name="message" cols="30" rows="10"></textarea> <br><br>
+
+            <input class="btn btn-success" type="submit">
+        </form>
+    </div>
+
+    <!-- in the middle there will be an array that shows anything that is scheduled.csv for the current date -->
+    <div id="today">
+        <h3>Today</h3>
+        <div class="dashboard-slots">
+
+
+
+
+
+            <%scheduledToday.forEach((schedule) => {%>
+
+                <tr>
+                    <td>
+
+                        <div class="schedule-info">
+                            <div class="time-display-today"><%=schedule[3]%></div>
+                            <div class="date-display-today"><%=schedule[4]%></div>
+                            <span style="font-weight: bold"><div class="subject-display-today"><%=schedule[5]%></div></span>
+                            <div class="message-display-today"><%=schedule[6]%></div>
+                        </div>
+
+                    </td>
+
+                    <td>
+                        <form action="/dashboard/delete<%=schedule[0]%>?_method=DELETE" method="post">
+                            <button style="float: right; margin-bottom: 10px; font-size: x-large;" class="btn"><i class="trash-button fas fa-trash-alt"></i></button>
+                        </form>
+
+                    </td>
+
+                </tr>
+            <br><br><hr>
+
+            <%});%>
+
+        </div>
+    </div>
+
+
+    <!--on the right all the scheduled.csv tasks further on into the future from just the the current day will be put into this list -->
+
+    <div id="future">
+        <h3>Future</h3>
+        <div class="dashboard-slots">
+            <%scheduledFuture.forEach((schedule) => {%>
+
+            <tr>
+                <td>
+
+                    <div class="schedule-info">
+                        <div class="time-display-today"><%=schedule[3]%></div>
+                        <div class="date-display-today"><%=schedule[4]%></div>
+                        <span style="font-weight: bold"><div class="subject-display-today"><%=schedule[5]%></div></span>
+                        <div class="message-display-today"><%=schedule[6]%></div>
+                    </div>
+
+                </td>
+
+                <td>
+                    <form action="/dashboard/delete<%=schedule[0]%>?_method=DELETE" method="post">
+                        <button style="float: right; margin-bottom: 10px; font-size: x-large;" class="btn"><i class="trash-button fas fa-trash-alt"></i></button>
+                    </form>
+                </td>
+
+            </tr>
+            <br><br><hr>
+
+
+
+            <%});%>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/scripts/DashboardScripts.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

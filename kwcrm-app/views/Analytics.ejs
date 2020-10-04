@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analytics</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/AnalyticsStyles.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/NavbarLoggedInStyles.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/NavbarNotLoggedInStyles.css">
+</head>
+<body>
+
+
+<% include partials/NavbarLoggedIn.ejs %>
+<br><br>
+
+<h1>Analytics</h1>
+<br><br><br>
+
+<!--top section with the graphs-->
+
+<div class="split-screen-horizontal">
+
+    <div class="top-half-of-analytics">
+        <div class="first-graph">
+            <canvas id="clients-gained"></canvas>
+        </div>
+        <div class="second-graph">
+            <canvas id="clients-lost"></canvas>
+        </div>
+        <!--<div class="third-graph">-->
+            <!--<canvas id="number-of-clients"></canvas>-->
+        <!--</div>-->
+    </div>
+    <br><br><br>
+
+
+<!--bottom section for conversion rate and the input analytical data buttons-->
+
+    <div class="bottom-half-of-analytics">
+
+        <div class="left-side-bottom-analytics">
+
+           <div class="conversion-rate-holder">
+                <h3>Conversion Rate This Month</h3>
+                <table class="conversion-rate-table">
+                    <tr>
+                        <td><h4 class="remove-margin"><%=conversionRate.ratio%></h4></td>
+                        <td><h4 class="remove-margin"><%=conversionRate.percentage%></h4></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="middle-bottom-analytics">
+            <label for="time-scale">Time Scale</label>
+            <form id="time-scale-form" action="/analytics/" method="get">
+                <div class="time-scale-separator">
+                    <select onchange="changeAction()" class="custom-select" name="time-scale" id="time-scale">
+
+                        <!--ejs tags help determine which of the options should be made selected -->
+
+                        <% if (timeScale === "daily") { %>
+                            <option selected class="time-scale-option" value="daily">Daily</option>
+                        <% } else { %>
+                            <option selected class="time-scale-option" value="daily">Daily</option>
+                        <% } %>
+
+                        <% if (timeScale === "weekly") { %>
+                            <option selected class="time-scale-option" value="weekly">Weekly</option>
+                        <% } else { %>
+                            <option class="time-scale-option" value="weekly">Weekly</option>
+                        <% } %>
+
+                        <% if (timeScale === "monthly") { %>
+                            <option selected class="time-scale-option" value="monthly">Monthly</option>
+                        <% } else { %>
+                            <option class="time-scale-option" value="monthly">Monthly</option>
+                        <% } %>
+
+                    </select>
+                    <button id="time-scale-btn" class="btn btn-success">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="right-side-bottom-analytics">
+
+            <div class="button-holder-analytics">
+
+
+                <div class="row-of-buttons">
+
+                    <a class="btn btn-primary" id="client-lost-btn" href="/analytics/clientLost">Client Lost</a>
+
+                    <a class="btn btn-primary" id="client-gained-btn" href="/analytics/clientGained">Client Gained</a>
+
+                </div>
+
+                <div class="row-of-buttons">
+
+                    <a class="btn btn-primary" id="lead-lost-btn" href="/analytics/leadLost">Lead Lost</a>
+
+                    <a class="btn btn-danger" onclick="return confirm('Are You Sure You Want To Delete ALL Analytics Data?')"
+                       id="remove-all-data-btn" href="/analytics/removeAllData">Remove All Data</a>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+
+<!-- sets the variables for the graphs to use - data points and labels-->
+<script>
+    let clientsGainedLabels = "<%=graphData.clientsGained.labels%>".split(",");
+    let clientsGainedDataPoints = "<%=graphData.clientsGained.dataPoints%>".split(",");
+
+    let clientsLostLabels = "<%=graphData.clientsLost.labels%>".split(",");
+    let clientsLostDataPoints = "<%=graphData.clientsLost.dataPoints%>".split(",");
+
+</script>
+
+<script src="/scripts/AnalyticsScripts.js"></script>
+
+</body>
+</html>

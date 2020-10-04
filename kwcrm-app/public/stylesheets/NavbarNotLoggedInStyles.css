@@ -1,0 +1,12 @@
+
+
+.separator {
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+ }
+
+.nav-item{
+    font-size: large;
+    margin: 0 20px;
+}

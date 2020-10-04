@@ -1,0 +1,92 @@
+
+#halfway-separator {
+    display: flex;
+    justify-content: space-between;
+}
+
+#left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.contact-details{
+    width: fit-content;
+}
+
+.add-note-section {
+    width: fit-content;
+}
+
+.btn-submit-add-note {
+    margin-top: 10px;
+    float: right;
+}
+
+.btn-container-extra-notes {
+    float: right;
+    margin-top: 10px;
+    width: 40%;
+}
+
+#extra-notes-btn-group {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-submit-extra-notes {
+
+}
+
+.btn-submit-extra-notes-encrypt {
+
+}
+
+span {
+    font-weight: bold;
+    font-size: x-large;
+    margin-right: 1em;
+}
+
+.contact-management-buttons {
+    margin-top: 30px;
+    width: 40%;
+    display: flex;
+}
+
+.btn-edit-contact {
+    margin-right: 20%;
+}
+
+
+.table {
+    position: inherit;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.td-boreder {
+    border-left: 1px solid lightgrey;
+}
+
+.thead-grey {
+    background-color: lightgrey;
+}
+
+
+#table-holder-notes{
+    width: 680px;
+    height: 400px;
+    overflow: scroll;
+}
+
+textarea {
+    resize: none;
+}
+
+body {
+    margin: 40px 60px;
+}

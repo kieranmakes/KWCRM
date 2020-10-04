@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Individual Contact</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/stylesheets/ViewIndividualContactStyles.css">
+    <link rel="stylesheet" href="/stylesheets/NavbarLoggedInStyles.css">
+    <link rel="stylesheet" href="/stylesheets/NavbarNotLoggedInStyles.css">
+
+</head>
+<body>
+
+<% include partials/NavbarLoggedIn.ejs %>
+
+<!--if any error or success messages need to be outputted to the user then they will be entered in here-->
+
+<%if (flashMessage !== undefined){%>
+    <div class="alert alert-success">
+        <%= flashMessage %>
+    </div>
+<%}%>
+
+<%if (errorMessage !== undefined){%>
+<div class="alert alert-danger">
+    <%= errorMessage %>
+</div>
+<%}%>
+
+
+<!--this page will show all of the details of an individual contact-->
+<!--the page is vertically split in half-->
+<div id="halfway-separator">
+
+    <!--contacts main details are here-->
+    <div id="left-side">
+        <h2><%= contactDetails[3] + " " + contactDetails[4]%></h2><br>
+        <div class="contact-details">
+            <div class="jumbotron">
+                <table>
+                    <tr>
+                        <td>
+                            <h5><span>Business: </span></h5>
+                        </td>
+                        <td>
+                            <h5><%= contactDetails[2]%></h5>
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <h5><span>Email: </span></h5>
+                        </td>
+                        <td>
+                            <h5><%= contactDetails[5]%></h5>
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <h5><span>Phone Number: </span></h5>
+                        </td>
+                        <td>
+                            <h5><%= contactDetails[6]%></h5>
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <h5><span>City: </span></h5>
+                        </td>
+                        <td>
+                            <h5><%= contactDetails[7]%></h5>
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <h5><span>Postcode: </span></h5>
+                        </td>
+                        <td>
+                            <h5><%= contactDetails[8]%></h5>
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <h5><span>Address: </span></h5>
+                        </td>
+                        <td>
+                            <h5><%= contactDetails[9]%></h5>
+                        </td>
+                    </tr>
+
+                    <!-- below code changes the data from the csv file for client status into something that looks better
+                            eg. current-client ===> Current Client                                                      -->
+
+                    <tr>
+                        <td>
+                            <h5><span>Contacts Status: </span></h5>
+                        </td>
+                        <td>
+                            <%if(contactDetails[10] === "lead") {%>
+                                <h5>Lead</h5>
+                            <%}%>
+
+                            <%if(contactDetails[10] === "recontact-lead") {%>
+                                <h5>Recontact Lead</h5>
+                            <%} %>
+
+                            <%if(contactDetails[10] === "dead-lead") {%>
+                                <h5>Dead Lead</h5>
+                            <%}%>
+
+
+                            <%if(contactDetails[10] === "current-client") {%>
+                                <h5>Current Client</h5>
+                            <%}%>
+
+
+                            <%if(contactDetails[10] === "past-client") {%>
+                                <h5>Past Client</h5>
+                            <%}%>
+                        </td>
+                    </tr>
+
+                </table>
+
+
+            </div>
+        </div>
+
+        <!--this text area form allows for the user to add a note which will get displayed in the notes table to the left-->
+        <div class="add-note-section">
+
+            <form action="/contacts/addnote<%=contactDetails[0]%>" method="post">
+
+                <h3><label for="addNote">Add Note</label><br></h3>
+                <textarea name="addNote" onkeypress="return returnKeyBlocker(event)" id="addNote" cols="60" rows="7"></textarea>
+                <br>
+                <input class="btn-submit-add-note btn btn-primary" type="submit">
+            </form>
+
+        </div>
+
+        <!--edit contact button will redirect the user to the edit contact page with that contacts details filled in-->
+        <!--the delete contact will ask for verification before deleting the contact-->
+
+        <div class="contact-management-buttons">
+
+            <a class="btn btn-secondary btn-edit-contact" href="/contacts/edit<%=contactDetails[0]%>">Edit Contact</a>
+
+            <form action="/contacts/delete<%=contactDetails[0]%>?_method=DELETE" onsubmit="return confirm('Are You Sure You Want To Delete This Contact');"  method="post">
+                <button class="btn btn-danger btn-delete-contact">Delete Contact</button>
+            </form>
+
+        </div>
+    </div>
+
+
+    <!--on the right side there is another text area that can be used to add, edit data and view data-->
+
+    <div id="right-side">
+        <div class="extra-notes">
+            <br><br><br>
+
+            <!--the place holder will display instructions as to how to save, encrypt and decrypt the data as
+                it is not super intuitive at first -->
+            <form action="/contacts/viewContact<%=contactDetails[0]%>/encryptNotes_encrypt" method="post">
+                <h3><label for="extraNotes">Extra Notes</label></h3>
+                <textarea name="extraNotes" id="extraNotes" onkeypress="return returnKeyBlocker(event)" cols="80" rows="10"
+                          placeholder="
+REMEMBER THE PASSWORD! There Is No Way Of Getting The Data Back If
+You Forget It. Type Data into text area and press save & encrypt to save the data to the file with xor encryption done to
+to it. this data can be changed by first decrypting it, changing the data and then pressing the save & encrypt button again.
+When data is decrypted it will not save anything back to the file. If the wrong decrypt password is entered, the decrypted text will
+not be the original text
+                                        "><%=extraNotes%></textarea><br>
+
+                <!--when the save and encrypt btn is pressed, the data in the text field will get encrypted and saved to the database-->
+                <!--when the decrypt button is pressed the data will get retrieved from the database and outputted to the text area-->
+                <!--a password page will appear before the encryption or decryption happens though-->
+                <div class="btn-container-extra-notes">
+
+                    <div id="extra-notes-btn-group">
+
+                        <input class="btn-submit-extra-notes btn btn-secondary"
+                               type="submit" value="Decrypt" formaction="/contacts/viewContact<%=contactDetails[0]%>/encryptNotes_decrypt" formmethod="post">
+
+                        <input class="btn-submit-extra-notes btn btn-primary" type="submit" value="Save & Encrypt">
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <br><br><br><br><br>
+
+        <!--this is a table that will display all the notes and the date that each note was created next to it -->
+        <div id="table-holder-notes">
+            <table class="table ">
+                <thead class="thead-grey">
+                <tr>
+                    <th>Date</th>
+                    <th>Notes</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                    <%contactNotes.forEach((noteRecord) => {%>
+
+                        <tr>
+                            <!-- the notes creation date gets put into here-->
+                            <td class="td-boreder">
+                                <%=noteRecord[2]%>
+                            </td>
+                            <!--the note data will be in here-->
+                            <td class="td-boreder">
+                                <%=noteRecord[4]%>
+                            </td>
+
+                        </tr>
+
+                    <%});%>
+
+                <tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<script src="/scripts/ViewIndividualContactScripts.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

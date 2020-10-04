@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Contact</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/CreateContactStyles.css">
+    <link rel="stylesheet" href="/stylesheets/NavbarLoggedInStyles.css">
+    <link rel="stylesheet" href="/stylesheets/NavbarNotLoggedInStyles.css">
+    <script src="/scripts/CreateContactScripts.js"></script>
+</head>
+<body>
+
+<% include partials/NavbarLoggedIn.ejs %>
+
+
+
+<%if (flashMessage !== undefined){%>
+<div class="alert alert-danger">
+    <%= flashMessage %>
+</div>
+<%}%>
+
+<!--basic form using bootstrap that will be used as a data capture to make create a contact-->
+
+<h1>Create Contact</h1>
+<div class="container">
+    <div class="jumbotron">
+        <form class="form" action="/contacts" method="post">
+            <h3>Contact Details</h3><br>
+            <div class="row">
+                <div class="col">
+                    <label for="business">Business</label>
+                    <input class="form-control" id="business" name="businessName" value="<%=savedBodyValue[0]%>" type="text"><br>
+                </div>
+                <div class="col">
+                    <label for="first-name">First Name</label>
+                    <input class="form-control" id="first-name" name="firstName" value="<%=savedBodyValue[1]%>" type="text"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="last-name">Last Name</label>
+                    <input class="form-control" id="last-name" name="lastName" value="<%=savedBodyValue[2]%>" type="text"><br>
+                </div>
+                <div class="col">
+                    <label for="email">Email</label>
+                    <input class="form-control" id="email" name="email" value="<%=savedBodyValue[3]%>" type="text"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="telephone">Telephone</label>
+                    <input class="form-control" id="telephone" name="telephone" value="<%=savedBodyValue[4]%>" type="text"><br>
+                </div>
+                <div class="col">
+                    <label for="city">City</label>
+                    <input class="form-control" id="city" name="city" value="<%=savedBodyValue[5]%>" type="text"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="postcode">Postcode</label>
+                    <input class="form-control" id="postcode" name="postcode" value="<%=savedBodyValue[6]%>" type="text"><br>
+                </div>
+                <div class="col">
+                    <label for="address">Address</label>
+                    <input class="form-control" id="address" name="address" value="<%=savedBodyValue[7]%>" type="text"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="status">Contact Status</label>
+                    <select class="custom-select" name="status" id="status">
+                        <option value="lead">Lead</option>
+                        <option value="recontact-lead">Recontact Lead</option>
+                        <option value="dead-lead">Dead Lead</option>
+                        <option value="current-client">Current Client</option>
+                        <option value="past-client">Past Client</option>
+                    </select>
+                </div>
+            </div>
+            <input class="btn btn-primary btn-lg btn-submit" type="submit">
+        </form>
+    </div>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+.top-half-of-analytics {
+    height: 450px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bottom-half-of-analytics {
+    display: flex;
+    justify-content: space-between;
+}
+
+.middle-bottom-analytics {
+    width: 250px;
+}
+
+.custom-select {
+    width: 150px;
+}
+
+.time-scale-separator {
+    display: flex;
+    justify-content: space-between;
+}
+
+.conversion-rate-holder {
+    padding-top: 20px;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.remove-margin {
+    margin: 0;
+}
+
+.conversion-rate-table {
+    width: 100%;
+    height:75px;
+    border: 1px solid black;
+}
+
+.row-of-buttons {
+    width: 250px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-holder-analytics {
+    width: fit-content;
+}
+
+td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+
+body {
+    margin: 40px 80px;
+}
+
+
+canvas {
+    width: 35vw;
+}
+
+
+
+
+
