@@ -11,7 +11,8 @@ An open source, web based customer relationship management system made into a de
   Once the task's date and time has lapsed, the task will be removed. The task can also be manually removed by clicking the trash icon.
   
 * #### Contacts List
-  search, sort and 
+  Search, sort, add and export (csv file) contacts. contacts displayed in a scrolable table. individual contact page can be accessed by clicking the contacts name link.
+  
 
 
 
