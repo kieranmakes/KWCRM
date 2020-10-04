@@ -8,7 +8,7 @@ An open source, web based customer relationship management system made into a de
 
 <hr>
 
-### Features
+## Features
 
  ### ⏳ &nbsp;&nbsp; Task Scheduler
 
@@ -52,7 +52,7 @@ An open source, web based customer relationship management system made into a de
 
 <hr> 
 
-### How It Works
+## How It Works
 
 * Electron app src/index.js creates a browser window and runs the express app
 * Express app kwcrm-app/index.js directory serves the site to localhost:8000
