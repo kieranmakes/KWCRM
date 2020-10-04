@@ -1,8 +1,7 @@
 <img width=50% src="https://github.com/kieranmakes/KWCRM/blob/crm-desktop-app/kwcrm-app/public/assets/word%20logo%20with%20abstract%20on%20side%20orange.png" alt='KWCRM'/>
 An open source, web based customer relationship management system made into a desktop application
 
-
-
+<hr>
 
 ### Features
 
