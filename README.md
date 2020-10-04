@@ -1,8 +1,11 @@
 <img width=50% src="https://github.com/kieranmakes/KWCRM/blob/crm-desktop-app/kwcrm-app/public/assets/word%20logo%20with%20abstract%20on%20side%20orange.png" alt='KWCRM'/>
 
 <br>
+
 An open source, web based customer relationship management system made into a desktop application
+
 <br>
+
 
 ![gif opening app](https://media.giphy.com/media/jVToiQU1RwXNFvg5tM/giphy.gif)
 
