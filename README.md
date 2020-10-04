@@ -10,10 +10,7 @@ An open source, web based customer relationship management system made into a de
 
 ### Features
 
- #### ⏳ &nbsp;&nbsp; Task Scheduler
- 
- <br>
-
+ ### ⏳ &nbsp;&nbsp; Task Scheduler
 
   <img align="left" src="https://media.giphy.com/media/38UQZDj7URgZYAjS3t/giphy.gif">
   <br><br><br><br><br><br>
