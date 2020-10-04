@@ -33,7 +33,7 @@ An open source, web based customer relationship management system made into a de
     
   Displays all of the contact's data. allows for notes to be added to the contact which get displayed only on the individual contact's page along with the date the note was created put in chronological order (newest at the top). An extra notes section (Text Area) which allows you to encrypt and decrypt data with a password through the use of xor encryption for more sensitive data. Can edit and delete contact through this page by clicking on the relevant buttons.
   
-<br><br><br><br><br>
+<br><br><br><br><br><br>
 
   <img align="left" src="https://media.giphy.com/media/BDQtWZzi6KknoGjTSf/giphy.gif">
 
