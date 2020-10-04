@@ -10,14 +10,12 @@ An open source, web based customer relationship management system made into a de
 
 ### Features
 
-<br>
-
 * #### ⏳ &nbsp;&nbsp; Task Scheduler
 
-
+  ![gif task schedular](https://media.giphy.com/media/38UQZDj7URgZYAjS3t/giphy.gif)
 
     Found in the Dashboard. Enter date, time, subject and message into the schedule task form and then it will display in chronological order in wither the today or future list.
-    Once the task's date and time has lapsed, the task will be removed. The task can also be manually removed by clicking the trash icon.   ![gif task schedular](https://media.giphy.com/media/38UQZDj7URgZYAjS3t/giphy.gif)
+    Once the task's date and time has lapsed, the task will be removed. The task can also be manually removed by clicking the trash icon.   
   
 <br>
 
