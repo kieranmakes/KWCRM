@@ -59,7 +59,7 @@ An open source, web based customer relationship management system made into a de
   
 ---  
   
-<br><br><br><br><br>
+<br><br><br><br>
 
   <img align="left" src="https://media.giphy.com/media/BDQtWZzi6KknoGjTSf/giphy.gif">
 
