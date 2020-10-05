@@ -26,7 +26,7 @@ An open source, web based customer relationship management system made into a de
     $ npm run make
     
 
-## Features
+## Features &nbsp;&nbsp; 🗿
 
 <br>
 
