@@ -8,7 +8,8 @@ An open source, web based customer relationship management system made into a de
 
     
 ---
-    
+   
+<br>
 
 ## Getting it Set and Running &nbsp;&nbsp; 🏃🏾‍♂️
 
