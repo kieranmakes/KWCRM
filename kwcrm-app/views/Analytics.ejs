@@ -108,8 +108,11 @@
 
                     <a class="btn btn-primary" id="lead-lost-btn" href="/analytics/leadLost">Lead Lost</a>
 
-                    <a class="btn btn-danger" onclick="return confirm('Are You Sure You Want To Delete ALL Analytics Data?')"
-                       id="remove-all-data-btn" href="/analytics/removeAllData">Remove All Data</a>
+                    <form action="/analytics/removeAllData?_method=DELETE" method="post"
+                        onsubmit="return confirm('Are You Sure You Want To Delete ALL Analytics Data?')" >
+                        <button class="btn btn-danger" id="remove-all-data-btn"> Remove All Data </button>
+                    </form>
+
 
                 </div>
             </div>

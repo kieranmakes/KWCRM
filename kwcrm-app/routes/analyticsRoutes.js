@@ -148,8 +148,8 @@ router.get("/leadLost", (req, res) => {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-router.delete("/analytics/removeAllData", (req, res) => {
-
+router.delete("/removeAllData", (req, res) => {
+    
     // delete records
     let leadsLostFile = new CSVHandler(__dirname + '/datastoreFiles/leadsLost.csv');
     let clientsLostFile = new CSVHandler(__dirname + '/datastoreFiles/clientsLost.csv');

@@ -617,8 +617,6 @@ router.delete("/delete:id", (req, res) => {
     let contactsExtraNotesFile = new CSVHandler(__dirname + '/dataStoreFiles/contactsExtraNotes.csv');
     let id = req.params.id; // gets the contacts id from the url
     let contactsExtraNoteRecord;
-
-    let contactsNotesTempFileForDelete;
     
     contactsFile.deleteRecord(id); // deletes the contact record from the contacts.csv file
 
