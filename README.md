@@ -31,7 +31,8 @@ An open source, web based customer relationship management system made into a de
     
 <br>
 
-## Features &nbsp;&nbsp; 🗿
+## System Features &nbsp;&nbsp; 🗿
+<br>
 
   <img align="left" src="https://media.giphy.com/media/38UQZDj7URgZYAjS3t/giphy.gif">
   
