@@ -1,4 +1,4 @@
-<img width=50% src="https://github.com/kieranmakes/KWCRM/blob/crm-desktop-app/kwcrm-app/public/assets/word%20logo%20with%20abstract%20on%20side%20orange.png" alt='KWCRM'/>
+<img width=50% src="https://github.com/kieranmakes/KWCRM/blob/crm-desktop-app/kwcrm-app/public/assets/word%20logo%20with%20abstract%20on%20side%20orange.png?raw=true" alt='KWCRM'/>
 
 <br>
 
