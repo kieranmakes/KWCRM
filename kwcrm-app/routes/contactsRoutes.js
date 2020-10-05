@@ -619,15 +619,19 @@ router.delete("/delete:id", (req, res) => {
     let contactsExtraNoteRecord;
 
     let contactsNotesTempFileForDelete;
-
+    
     contactsFile.deleteRecord(id); // deletes the contact record from the contacts.csv file
 
     // gets the record with the contacts id at index 2 Then returns a 2D array with the record in the only array
     // within the 2D array. record accessed with the [0] at the end
     contactsExtraNoteRecord = contactsExtraNotesFile.getRecordsOnlyByField([2], id)[0];
-    contactsExtraNotesFile.deleteRecord(contactsExtraNoteRecord[0]); // the [0] gets the data at the 0 index which is the id
+    try {
+        contactsExtraNotesFile.deleteRecord(contactsExtraNoteRecord[0]); // the [0] gets the data at the 0 index which is the id
+        res.redirect("/contacts/");
+    } catch (e) {
+        res.redirect('/contacts/')
+    }
 
-    res.redirect("/contacts/");
 });
 
 
