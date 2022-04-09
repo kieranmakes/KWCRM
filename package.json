@@ -54,7 +54,7 @@
     "express-session": "^1.15.6",
     "filereader": "^0.10.3",
     "method-override": "^3.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "uniqid": "^5.0.3"
   },
   "devDependencies": {
