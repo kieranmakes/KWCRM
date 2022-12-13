@@ -50,7 +50,7 @@
     "electron-squirrel-startup": "^1.0.0",
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "express-session": "^1.15.6",
     "filereader": "^0.10.3",
     "method-override": "^3.0.0",
