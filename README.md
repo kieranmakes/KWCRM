@@ -6,8 +6,6 @@
 
 An open source, web based customer relationship management system made into a desktop application
 
-[Try out the CRM online in trial mode](https://kwcrm.herokuapp.com/)
-
     
 ---
    
